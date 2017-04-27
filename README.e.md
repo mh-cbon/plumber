@@ -1,3 +1,9 @@
+---
+License: MIT
+LicenseFile: LICENSE
+LicenseColor: yellow
+Name: emd
+---
 # {{.Name}}
 
 {{template "badge/travis" .}} {{template "badge/appveyor" .}} {{template "badge/goreport" .}} {{template "badge/godoc" .}} {{template "license/shields" .}}
@@ -21,12 +27,12 @@ comes with a command line program to generate your own typed pipes.
 ## Cli examples
 
 ```sh
-# Init a basic emd file to get started.
+# Create a pipe of *tomate.SuperStruct in the package mysuperpkg
 plumber - mysuperpkg *tomate.SuperStruct
 ```
 # API example
 
-Demonstrates how you can take advantage of this API to build data transformation
+Demonstrates how you can take advantage of this API to stream process the data
 
 #### > main.go
 

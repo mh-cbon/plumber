@@ -1,5 +1,19 @@
 # Changelog - plumber
 
+### 0.0.1-beta1
+
+__Changes__
+
+- Fix and improvements in the README
+
+__Contributors__
+
+- mh-cbon
+
+Released by mh-cbon, Thu 27 Apr 2017 -
+[see the diff](https://github.com/mh-cbon/plumber/compare/0.0.1-beta...0.0.1-beta1#diff)
+______________
+
 ### 0.0.1-beta
 
 __Changes__

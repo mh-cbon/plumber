@@ -1,6 +1,6 @@
-# emd
+# plumber
 
-[![travis Status](https://travis-ci.org//mh-cbon/emd.svg?branch=master)](https://travis-ci.org//mh-cbon/emd) [![Appveyor Status](https://ci.appveyor.com/api/projects/status//github/mh-cbon/emd?branch=master&svg=true)](https://ci.appveyor.com/projects//mh-cbon/emd) [![Go Report Card](https://goreportcard.com/badge/github.com/mh-cbon/emd)](https://goreportcard.com/report/github.com/mh-cbon/emd) [![GoDoc](https://godoc.org/github.com/mh-cbon/emd?status.svg)](http://godoc.org/github.com/mh-cbon/emd) [![MIT License](http://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![travis Status](https://travis-ci.org//mh-cbon/plumber.svg?branch=master)](https://travis-ci.org//mh-cbon/plumber) [![Appveyor Status](https://ci.appveyor.com/api/projects/status//github/mh-cbon/plumber?branch=master&svg=true)](https://ci.appveyor.com/projects//mh-cbon/plumber) [![Go Report Card](https://goreportcard.com/badge/github.com/mh-cbon/plumber)](https://goreportcard.com/report/github.com/mh-cbon/plumber) [![GoDoc](https://godoc.org/github.com/mh-cbon/plumber?status.svg)](http://godoc.org/github.com/mh-cbon/plumber) [![MIT License](http://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Package plumber builds pipes to transform a data stream.
 
@@ -19,7 +19,7 @@ Package plumber builds pipes to transform a data stream.
 
 # Install
 ```sh
-go get github.com/mh-cbon/emd
+go get github.com/mh-cbon/plumber
 ```
 
 # Generator

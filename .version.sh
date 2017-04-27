@@ -9,7 +9,7 @@ PREVERSION=
   666 commit -q -m "changelog: !newversion!" -f change.log
   666 changelog md -o CHANGELOG.md --guess
   666 commit -q -m "changelog: !newversion!" -f CHANGELOG.md
-  666 go install ./plumber/ --ldflags "-X main.version=!newversion!"
+  666 go install --ldflags "-X main.version=!newversion!" ./plumber/
   666 emd gen -out README.md
   666 commit -q -m "README: !newversion!" -f README.md
 

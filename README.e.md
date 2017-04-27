@@ -2,7 +2,6 @@
 License: MIT
 LicenseFile: LICENSE
 LicenseColor: yellow
-Name: emd
 ---
 # {{.Name}}
 

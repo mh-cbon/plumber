@@ -16,8 +16,8 @@ LicenseColor: yellow
 
 # Generator
 
-To help you to deal with the step of interface implementation `plumber`
-comes with a command line program to generate your own typed pipes.
+To help you to deal with the step of interface implementation,
+ `plumber` comes with a command line program to generate your own typed pipes.
 
 ## Usage
 
@@ -31,11 +31,22 @@ plumber - mysuperpkg *tomate.SuperStruct
 ```
 # API example
 
-Demonstrates how you can take advantage of this API to stream process the data
+Following example reads a `source` of `[]byte`, os.Stdin,
+as a list of versions, one per line,
+manipulates and transforms the chunks
+until the data is written on the `sink`, os.Stdout.
 
-#### > main.go
+#### > {{cat "demo/main.go" | color "go"}}
 
-{{read "demo.go" | color "go"}}
+Following code is the implementation of various
+pipe `transformer` that works with `*semver.Version` type.
+
+#### > {{cat "demo/version.go" | color "go"}}
+
+Following is the generated code to build pipes
+to work with `*semver.Version` values.
+
+#### > {{cat "demo/semver_gen.go" | color "go"}}
 
 # Recipes
 

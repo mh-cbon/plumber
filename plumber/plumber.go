@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"os"
+	"os/exec"
 	"strings"
 )
 
@@ -70,6 +71,8 @@ import (
 // github.com/mh-cbon/plumber
 // To not edit.
 
+
+
 `)
 
 	for _, arg := range args[2:] {
@@ -94,6 +97,9 @@ import (
 		if err != nil {
 			panic(err)
 		}
+	}
+	if args[0] != "-" {
+		exec.Command("go", "fmt", args[0]).Run()
 	}
 }
 

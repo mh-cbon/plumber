@@ -1,5 +1,36 @@
 # Changelog - plumber
 
+### 0.0.1-beta4
+
+__Changes__
+
+- `plumber` command line
+
+    - add support for package import into its arguments.
+
+      Before to select a type it was: '[]byte', 'semver.Version', '*my.PointerType'
+
+      Now, you can use: 'github.com/mh-cbon/semver/*my.PointerType'
+
+    - go:generate: fixed the template!
+    - go:generate: When the output is a file, it is automatically go fmted.
+
+- Other fixes
+  - updated cli help to add the new import capability
+  - updated README to add the new import capability
+  - improved byteStream error message when a wrong pipe is connected on it.
+  - updated the demo so it does work.
+
+
+
+__Contributors__
+
+- mh-cbon
+
+Released by mh-cbon, Fri 28 Apr 2017 -
+[see the diff](https://github.com/mh-cbon/plumber/compare/0.0.1-beta3...0.0.1-beta4#diff)
+______________
+
 ### 0.0.1-beta3
 
 __Changes__

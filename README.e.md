@@ -27,7 +27,7 @@ To help you to deal with the step of interface implementation,
 
 ```sh
 # Create a pipe of *tomate.SuperStruct in the package mysuperpkg
-plumber - mysuperpkg *tomate.SuperStruct
+plumber - *tomate.SuperStruct
 ```
 # API example
 

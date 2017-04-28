@@ -31,7 +31,7 @@ func main() {
 		return
 	}
 
-	if flag.NArg() < 3 {
+	if flag.NArg() < 2 {
 		panic("wrong usage")
 	}
 	args := flag.Args()
@@ -47,17 +47,17 @@ func main() {
 	}
 
 	imports := ""
-	for i, arg := range args[2:] {
+	for i, arg := range args[1:] {
 		if strings.Index(arg, "/") > -1 {
 			x := strings.Split(arg, "/")
 			Import := strings.Join(x[:len(x)-1], "/")
-			args[i+2] = args[i+2][len(Import)+1:]
+			args[i+1] = args[i+1][len(Import)+1:]
 			imports += fmt.Sprintf("	%q\n", Import)
 		}
 	}
 
-	pkg := args[1]
-	fmt.Fprintf(dst, "// Package %v implements pipes for a stream of %v\n", pkg, strings.Join(args[2:], " "))
+	pkg := os.Getenv("GOPACKAGE")
+	fmt.Fprintf(dst, "// Package %v implements pipes for a stream of %v\n", pkg, strings.Join(args[1:], " "))
 	fmt.Fprintf(dst, "package %v\n", pkg)
 	fmt.Fprint(dst, `
 import (
@@ -75,7 +75,7 @@ import (
 
 `)
 
-	for _, arg := range args[2:] {
+	for _, arg := range args[1:] {
 		FQType := arg
 		Name := FQType
 
@@ -186,9 +186,8 @@ func showHelp() {
 	fmt.Println()
 	fmt.Println("Usage")
 	fmt.Println()
-	fmt.Printf("	plumber [out] [pkg] [...types]\n\n")
+	fmt.Printf("	plumber [out] [...types]\n\n")
 	fmt.Printf("	out: 	Output destination of the results, use '-' for stdout.\n")
-	fmt.Printf("	pkg: 	The package name of the generated code.\n")
 	fmt.Printf("	types:	A list of fully qualified types such as\n")
 	fmt.Printf("	     	'[]byte', 'semver.Version', '*my.PointerType'\n")
 	fmt.Printf("	     	or 'github.com/mh-cbon/semver/*my.PointerType'.\n")

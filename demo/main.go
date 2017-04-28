@@ -11,7 +11,7 @@ import (
 	"github.com/mh-cbon/plumber"
 )
 
-//go:generate plumber semver_gen.go main "github.com/mh-cbon/semver/*semver.Version"
+//go:generate plumber semver_gen.go "github.com/mh-cbon/semver/*semver.Version"
 
 func main() {
 

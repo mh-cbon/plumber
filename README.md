@@ -37,10 +37,9 @@ plumber 0.0.0
 
 Usage
 
-	plumber [out] [pkg] [...types]
+	plumber [out] [...types]
 
 	out: 	Output destination of the results, use '-' for stdout.
-	pkg: 	The package name of the generated code.
 	types:	A list of fully qualified types such as
 	     	'[]byte', 'semver.Version', '*my.PointerType'
 	     	or 'github.com/mh-cbon/semver/*my.PointerType'.
@@ -50,7 +49,7 @@ Usage
 
 ```sh
 # Create a pipe of *tomate.SuperStruct in the package mysuperpkg
-plumber - mysuperpkg *tomate.SuperStruct
+plumber - *tomate.SuperStruct
 ```
 # API example
 
@@ -74,7 +73,7 @@ import (
 	"github.com/mh-cbon/plumber"
 )
 
-//go:generate plumber semver_gen.go main "github.com/mh-cbon/semver/*semver.Version"
+//go:generate plumber semver_gen.go "github.com/mh-cbon/semver/*semver.Version"
 
 func main() {
 

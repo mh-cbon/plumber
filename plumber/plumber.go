@@ -184,7 +184,7 @@ func showHelp() {
 	fmt.Printf("	out: 	Output destination of the results, use '-' for stdout.\n")
 	fmt.Printf("	pkg: 	The package name of the generated code.\n")
 	fmt.Printf("	types:	A list of fully qualified types such as\n")
-	fmt.Printf("	     	'[]byte', 'semver.Version', '*my.PointerType' ")
+	fmt.Printf("	     	'[]byte', 'semver.Version', '*my.PointerType'\n")
 	fmt.Printf("	     	or 'github.com/mh-cbon/semver/*my.PointerType'.\n")
 	fmt.Println()
 }

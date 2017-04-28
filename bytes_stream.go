@@ -19,7 +19,6 @@ type ByteStream struct {
 
 // Pipe connects a Pipe, returns the connected Pipe left-end.
 func (p *ByteStream) Pipe(s Piper) Piper {
-	// add lock
 	p.Sink(s)
 	return s
 }
@@ -28,7 +27,9 @@ func (p *ByteStream) Pipe(s Piper) Piper {
 func (p *ByteStream) Sink(s Flusher) {
 	x, ok := s.(ByteWriter)
 	if !ok {
-		panic("nop")
+		panic(
+			fmt.Errorf("Cannot Pipe a %T on %T", s, p),
+		)
 	}
 	p.Streams = append(p.Streams, x)
 }
@@ -38,7 +39,9 @@ func (p *ByteStream) Unpipe(s Flusher) {
 	// add lock
 	x, ok := s.(ByteWriter)
 	if !ok {
-		panic("nop")
+		panic(
+			fmt.Errorf("Cannot Pipe a %T on %T", s, p),
+		)
 	}
 	i := -1
 	for e, pp := range p.Streams {

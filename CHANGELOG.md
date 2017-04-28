@@ -1,5 +1,19 @@
 # Changelog - plumber
 
+### 0.0.1-beta5
+
+__Changes__
+
+- cli: removed useless pkg parameter, go:generate already provide it
+
+__Contributors__
+
+- mh-cbon
+
+Released by mh-cbon, Fri 28 Apr 2017 -
+[see the diff](https://github.com/mh-cbon/plumber/compare/0.0.1-beta4...0.0.1-beta5#diff)
+______________
+
 ### 0.0.1-beta4
 
 __Changes__
@@ -20,6 +34,8 @@ __Changes__
   - updated README to add the new import capability
   - improved byteStream error message when a wrong pipe is connected on it.
   - updated the demo so it does work.
+
+
 
 
 

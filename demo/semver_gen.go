@@ -12,7 +12,6 @@ import (
 // github.com/mh-cbon/plumber
 // To not edit.
 
-
 // VersionPipeWriter receives *semver.Version
 type VersionPipeWriter interface {
 	plumber.Flusher

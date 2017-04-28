@@ -1,4 +1,14 @@
 
+0.0.1-beta5
+
+  * cli: removed useless pkg parameter, go:generate already provide it
+
+  - mh-cbon <mh-cbon@users.noreply.github.com>
+
+-- mh-cbon <mh-cbon@users.noreply.github.com>; Fri, 28 Apr 2017 17:48:34 +0200
+
+
+
 0.0.1-beta4
 
   * `plumber` command line
@@ -17,6 +27,8 @@
     - updated README to add the new import capability
     - improved byteStream error message when a wrong pipe is connected on it.
     - updated the demo so it does work.
+
+
 
 
   - mh-cbon <mh-cbon@users.noreply.github.com>

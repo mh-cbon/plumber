@@ -16,10 +16,12 @@ func main() {
 	var h bool
 	var ver bool
 	var v bool
+	var outPkg string
 	flag.BoolVar(&help, "help", false, "Show help.")
 	flag.BoolVar(&h, "h", false, "Show help.")
 	flag.BoolVar(&ver, "version", false, "Show version.")
 	flag.BoolVar(&v, "v", false, "Show version.")
+	flag.StringVar(&outPkg, "p", os.Getenv("GOPACKAGE"), "Package name of the new code.")
 	flag.Parse()
 
 	if ver || v {
@@ -56,9 +58,8 @@ func main() {
 		}
 	}
 
-	pkg := os.Getenv("GOPACKAGE")
-	fmt.Fprintf(dst, "// Package %v implements pipes for a stream of %v\n", pkg, strings.Join(args[1:], " "))
-	fmt.Fprintf(dst, "package %v\n", pkg)
+	fmt.Fprintf(dst, "// Package %v implements pipes for a stream of %v\n", outPkg, strings.Join(args[1:], " "))
+	fmt.Fprintf(dst, "package %v\n", outPkg)
 	fmt.Fprint(dst, `
 import (
 	"fmt"
@@ -186,10 +187,11 @@ func showHelp() {
 	fmt.Println()
 	fmt.Println("Usage")
 	fmt.Println()
-	fmt.Printf("	plumber [out] [...types]\n\n")
+	fmt.Printf("	plumber [-p name] [out] [...types]\n\n")
 	fmt.Printf("	out: 	Output destination of the results, use '-' for stdout.\n")
 	fmt.Printf("	types:	A list of fully qualified types such as\n")
 	fmt.Printf("	     	'[]byte', 'semver.Version', '*my.PointerType'\n")
 	fmt.Printf("	     	or 'github.com/mh-cbon/semver/*my.PointerType'.\n")
+	fmt.Printf("	-p:	  The output package name\n")
 	fmt.Println()
 }

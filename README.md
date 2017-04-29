@@ -37,12 +37,13 @@ plumber 0.0.0
 
 Usage
 
-	plumber [out] [...types]
+	plumber [-p name] [out] [...types]
 
 	out: 	Output destination of the results, use '-' for stdout.
 	types:	A list of fully qualified types such as
 	     	'[]byte', 'semver.Version', '*my.PointerType'
 	     	or 'github.com/mh-cbon/semver/*my.PointerType'.
+	-p:	  The output package name
 ```
 
 ## Cli examples
